@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>My Store</title>
+
+  <link
+    href="bootstrap-5.3.8-dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <div class="container mt-5">
+
+    <h1 class="text-center mb-4">My Store</h1>
+
+    <!-- Filters -->
+    <div class="row g-2 align-items-center mb-4">
+
+        <button onclick="clearFilters()" class="btn btn-danger">
+  Clear Filters
+</button>
+
+      <!-- Search -->
+      <div class="col-md-3">
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control"
+          placeholder="Search for products..."
+        />
+      </div>
+
+      <!-- Category -->
+      <div class="col-md-2">
+        <select id="categorySelect" class="form-select">
+          <option value="">All Categories</option>
+        </select>
+      </div>
+
+      <!-- Min Price -->
+      <div class="col-md-2">
+        <input
+          type="number"
+          id="minPrice"
+          class="form-control"
+          placeholder="Min Price"
+        />
+      </div>
+
+      <!-- Max Price -->
+      <div class="col-md-2">
+        <input
+          type="number"
+          id="maxPrice"
+          class="form-control"
+          placeholder="Max Price"
+        />
+      </div>
+
+      <!-- Apply -->
+      <div class="col-md-2">
+<button onclick="search_products()" class="btn btn-success">
+  Apply
+</button>
+      </div>
+
+    </div>
+
+    <!-- Sort -->
+    <div class="row mb-4">
+
+      <div class="col-md-3">
+
+        <select
+          id="sortByPrice"
+          class="form-select"
+          onchange="sortProducts()"
+        >
+
+          <option value="">Sort by Price</option>
+
+          <option value="asc">
+            Price: Low to High
+          </option>
+
+          <option value="desc">
+            Price: High to Low
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <!-- Shopping Cart -->
+
+    <h3>Shopping Cart</h3>
+
+    <div id="cartContainer">
+
+      <h5>Total Quantity: 0</h5>
+
+      <h5>Total: $0.00</h5>
+
+    </div>
+
+
+    <!-- Products -->
+
+    <div
+      id="productsContainer"
+      class="row g-4 mt-2"
+    ></div>
+
+
+    <!-- Pagination -->
+
+    <div class="mt-4 text-center d-flex justify-content-center align-items-center flex-wrap gap-2">
+
+      <button
+        id="previous"
+        onclick="previous()"
+        class="btn btn-secondary"
+      >
+        Previous
+      </button>
+
+      <div id="paginationContainer" class="d-flex"></div>
+
+      <button
+        id="next"
+        onclick="next()"
+        class="btn btn-secondary"
+      >
+        Next
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div id="detailsContainer"></div>
+
+
+  <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+
+  <script src="index.js"></script>
+
+</body>
+
+</html>
